@@ -8,7 +8,7 @@ El workflow `.github/workflows/build.yml` llama al build oficial de ZMK (`build-
 
 - `boards/shields/temper/` — definición del teclado Temper 36 (vendida desde [raeedcho/temper-zmk-config](https://github.com/raeedcho/temper-zmk-config)), cargada como módulo vía `zephyr/module.yml`.
 - `nice_view_adapter` y `nice_view` — shields integrados en el propio ZMK.
-- `config/` — keymap Miryoku, Kconfig y tweaks de display (al final del keymap).
+- `config/` — keymap Miryoku, Kconfig y tweaks de display (comentados al final del keymap).
 
 Cada build combina los tres shields: `temper_left/right + nice_view_adapter + nice_view`.
 
@@ -22,7 +22,7 @@ zmk-config/
 ├── boards/shields/temper/        # Definición del shield Temper 36
 └── config/
     ├── west.yml                  # Manifiesto: ZMK v0.3
-    ├── temper.keymap             # Keymap (includes Miryoku + tweaks nice!view)
+    ├── temper.keymap             # Keymap (includes Miryoku; tweaks nice!view comentados)
     ├── temper.conf               # Kconfig nice!view
     └── miryoku/                  # Motor Miryoku + customizaciones
 ```
