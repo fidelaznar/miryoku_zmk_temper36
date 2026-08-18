@@ -27,6 +27,21 @@ zmk-config/
     └── miryoku/                  # Motor Miryoku + customizaciones
 ```
 
+## Variaciones respecto a Miryoku por defecto
+
+Parte del layout Miryoku estándar (36 teclas: 3×5 + 3 thumbs; capas Base, Extra, Tap, Button, Nav, Mouse, Media, Num, Sym, Fun). Cambios sobre el stock:
+
+| Variación | Detalle | Implementación |
+|-----------|---------|----------------|
+| **Alfas QWERTY** | Miryoku por defecto usa Colemak DHm; aquí las alfas son QWERTY | `MIRYOKU_ALPHAS_QWERTY` en `miryoku/custom_config.h` |
+| **Clipboard Mac** | Copiar/pegar/cortar/deshacer con ⌘ (⌘C/⌘V/⌘X/⌘Z, rehacer ⌘⇧Z). Por defecto Miryoku usa X11 (Ctrl+Insert) | `MIRYOKU_CLIPBOARD_MAC` |
+| **Home row mods posicionales** | A/;→LGUI, S/L→LALT, D/K→LCTRL, F/J→LSHFT, X/.→RALT. Los mods de una mano solo se activan al pulsar teclas de la **mano opuesta** o los thumbs (same-hand prevention). Flavor `balanced`, tapping-term **280ms** (stock 200ms), prior-idle 150ms y `hold-trigger-on-release` (permite combinar mods de la misma mano, p. ej. Ctrl+Shift) | `u_mt_left` / `u_mt_right` en `miryoku/custom_behaviors.dtsi` |
+| **Capa Sym con caracteres españoles** | `ñ`/`Ñ` en su tecla (K25); `€` = Shift+`*`; `¡` = doble tap de `!`; `¿` = tecla dedicada (K29). Vía US International (Right Alt + N/5/1) | `MIRYOKU_LAYER_SYM` en `custom_config.h`; `morph_enye`, `morph_euro`, `td_bang` en `custom_behaviors.dtsi` |
+| **Bootloader en Sym** | Capa Sym → tecla **P** (fila superior derecha) reinicia en modo bootloader | `U_BOOT` en `MIRYOKU_LAYER_SYM` |
+| **Kludge thumbcombos desactivado** | Comportamiento de combinaciones de pulgares estándar (sin el kludge) | `#undef MIRYOKU_KLUDGE_THUMBCOMBOS` |
+
+Sin cambios respecto al stock (confirmado): navegación **VI (HJKL)** en capa Nav, asignación de pulgares (Media/Esc, Mouse/Tab, Nav/Esp · Sym/Ret, Num/Bspc, Fun/Del), capa Fun con perfiles Bluetooth (Z/X/C/V → BT 0-3, pairing con hold DEL + Shift + Z), capas Num/Mouse/Media y parámetros de mouse keys (1250/100, exponente 1, timings 1500/5000ms).
+
 ## Uso
 
 ### 1. Subir a GitHub
