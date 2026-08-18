@@ -33,6 +33,7 @@ Parte del layout Miryoku estándar (36 teclas: 3×5 + 3 thumbs; capas Base, Extr
 
 | Variación | Detalle | Implementación |
 |-----------|---------|----------------|
+| **Pulgares: Espacio ↔ Tab** | Miryoku stock: pulgar **medio** izquierdo = hold Nav, tap **SPACE**; pulgar **interior** izquierdo = hold Mouse, tap **TAB**. Aquí están intercambiados: medio = hold Mouse, tap **TAB**; interior = hold Nav, tap **SPACE**. El intercambio es consistente a todos los niveles (tap y capa del hold) | `MIRYOKU_LAYER_BASE` en `miryoku/custom_config.h` |
 | **Navegación VI** | Miryoku por defecto pone las flechas en la home row (LEFT/DOWN/UP/RIGHT con caps word a la izquierda); la variante VI las coloca en las posiciones J/K/L/; (estilo vim, con caps word al final) y reordena Home/PgDn/PgUp/End/Ins en la fila inferior. También activa las variantes `_VI` de las capas Mouse y Media | `MIRYOKU_NAV_VI` |
 | **Alfas QWERTY** | Miryoku por defecto usa Colemak DHm; aquí las alfas son QWERTY | `MIRYOKU_ALPHAS_QWERTY` en `miryoku/custom_config.h` |
 | **Clipboard Mac** | Copiar/pegar/cortar/deshacer con ⌘ (⌘C/⌘V/⌘X/⌘Z, rehacer ⌘⇧Z). Por defecto Miryoku usa X11 (Ctrl+Insert) | `MIRYOKU_CLIPBOARD_MAC` |
@@ -41,7 +42,7 @@ Parte del layout Miryoku estándar (36 teclas: 3×5 + 3 thumbs; capas Base, Extr
 | **Bootloader en Sym** | Capa Sym → tecla **P** (fila superior derecha) reinicia en modo bootloader | `U_BOOT` en `MIRYOKU_LAYER_SYM` |
 | **Kludge thumbcombos desactivado** | Comportamiento de combinaciones de pulgares estándar (sin el kludge) | `#undef MIRYOKU_KLUDGE_THUMBCOMBOS` |
 
-Sin cambios respecto al stock (confirmado): asignación de pulgares (Media/Esc, Mouse/Tab, Nav/Esp · Sym/Ret, Num/Bspc, Fun/Del), capa Fun con perfiles Bluetooth (Z/X/C/V → BT 0-3, pairing con hold DEL + Shift + Z), capas Num/Mouse/Media y parámetros de mouse keys (1250/100, exponente 1, timings 1500/5000ms).
+Sin cambios respecto al stock (confirmado): pulgar exterior izquierdo (Media/Esc) y pulgares derechos (Sym/Ret, Num/Bspc, Fun/Del), capa Fun con perfiles Bluetooth (Z/X/C/V → BT 0-3, pairing con hold DEL + Shift + Z), capas Num/Mouse/Media y parámetros de mouse keys (1250/100, exponente 1, timings 1500/5000ms).
 
 ## Uso
 
